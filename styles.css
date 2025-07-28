@@ -1,0 +1,120 @@
+:root {
+  --bg: #fff; --fg: #111; --alt-bg: #f4f4f4;
+  --primary: #007bff;
+}
+[data-theme='dark'] {
+  --bg: #111; --fg: #eee; --alt-bg: #1a1a1a;
+  --primary: #0a84ff;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  transition: 0.3s;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--alt-bg);
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.theme-controls select,
+button {
+  margin-left: .5rem;
+}
+.timeline-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.timeline-entry {
+  background: var(--alt-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+.timeline-entry .map {
+  width: 100%;
+  height: 150px;
+  margin-top: .5rem;
+  border-radius: 4px;
+}
+.btn-add {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+}
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 6rem;
+  background: var(--primary);
+  color: #fff;
+  padding: .75rem 1.25rem;
+  display: none;
+}
+.toast.show {
+  display: block;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+.modal-content input,
+textarea,
+button {
+  width: 100%;
+  margin-top: .75rem;
+  padding: .5rem;
+  border-radius: 4px;
+}
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.welcome-content {
+  text-align: center;
+  padding: 2rem;
+  background: var(--alt-bg);
+  border-radius: 8px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lifelog Vault</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="module" src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="profile">
+      <img src="https://via.placeholder.com/40" class="avatar" alt="User avatar" />
+      <span class="username">Lifelog Vault</span>
+    </div>
+    <div class="theme-controls">
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <label for="theme-select" class="sr-only">Theme</label>
+      <select id="theme-select">
+        <option value="auto">Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="timeline" class="timeline-container" aria-live="polite"></main>
+
+  <button id="btn-add" class="btn-add" aria-label="Add new memory">＋</button>
+
+  <div id="toast" class="toast" role="status" aria-live="assertive"></div>
+
+  <div id="modal-add" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
+    <div class="modal-content">
+      <h2 id="modal-add-title">New Memory</h2>
+      <form id="form-memory">
+        <label for="mem-title">Title</label>
+        <input type="text" id="mem-title" placeholder="Title" required />
+
+        <label for="mem-desc">Description</label>
+        <textarea id="mem-desc" placeholder="Write memory..." rows="3"></textarea>
+
+        <label for="mem-date">Date</label>
+        <input type="date" id="mem-date" required />
+
+        <label for="mem-img">📷 Image:</label>
+        <input type="file" id="mem-img" accept="image/*" />
+
+        <label for="mem-video">🎞 Video:</label>
+        <input type="file" id="mem-video" accept="video/*" />
+
+        <button type="button" id="btn-record" aria-label="Record voice note">
+          🎙 Record
+        </button>
+
+        <input type="file" id="mem-voice" accept="audio/*" hidden />
+
+        <button type="submit">Save</button>
+        <button type="button" id="btn-close">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="welcome" class="welcome-screen" role="dialog" aria-modal="true">
+    <div class="welcome-content">
+      <h1>Welcome to Lifelog Vault 🎉</h1>
+      <p>Save your memories with:</p>
+      <ul>
+        <li>📸 Image & Video</li>
+        <li>🎤 Voice notes</li>
+        <li>📍 Location tags</li>
+      </ul>
+      <button id="btn-start">Get Started</button>
+    </div>
+  </div>
+
+  <!-- Screen reader only helper class -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</body>
+</html>
